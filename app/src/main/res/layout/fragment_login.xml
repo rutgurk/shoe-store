@@ -25,7 +25,7 @@
             style="@style/FilledBoxRounded"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_l"
+            android:layout_marginBottom="@dimen/space_m"
             android:autofillHints="username"
             android:hint="@string/username_label"
             android:textAppearance="@style/TextAppearanceEditText"
