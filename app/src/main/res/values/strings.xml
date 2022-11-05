@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="login_title">Login</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="password_label">Password</string>
+    <string name="username_label">Username</string>
 </resources>
