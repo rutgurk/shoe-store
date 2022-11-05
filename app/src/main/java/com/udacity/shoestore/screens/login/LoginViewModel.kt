@@ -19,8 +19,8 @@ class LoginViewModel : ViewModel() {
         _usernameError.value = ""
     }
 
-    fun setUsernameError() {
-        if (isValidUsername) {
+    fun validateUsername() {
+        if (!isValidUsername) {
             _usernameError.value = "Please enter a valid e-mail address"
         }
     }

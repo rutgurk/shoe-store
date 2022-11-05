@@ -5,17 +5,18 @@
     tools:context=".screens.login.LoginFragment">
 
     <data>
+
         <variable
             name="loginViewModel"
             type="com.udacity.shoestore.screens.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E8EAF6"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:paddingStart="@dimen/space_l"
         android:paddingEnd="@dimen/space_l">
 
@@ -30,20 +31,20 @@
             android:textAppearance="@style/TextAppearanceEditText"
             app:boxBackgroundColor="#FFFFFF"
             app:endIconMode="clear_text"
+            app:errorEnabled="true"
             app:layout_constraintBottom_toTopOf="@id/password_edit_text_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.8"
-            app:errorEnabled="true"
             app:layout_constraintVertical_chainStyle="packed">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username_edit_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{loginViewModel.username}"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:text="@{loginViewModel.username}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +59,7 @@
             android:textAppearance="@style/TextAppearanceEditText"
             app:boxBackgroundColor="#FFFFFF"
             app:endIconMode="password_toggle"
-            app:layout_constraintBottom_toTopOf="@id/login_button"
+            app:layout_constraintBottom_toTopOf="@id/login_body_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/username_edit_text_layout">
@@ -69,6 +70,20 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/login_body_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_l"
+            android:layout_marginEnd="@dimen/space_l"
+            android:layout_marginBottom="@dimen/space_l"
+            android:text="@string/login_body_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintBottom_toTopOf="@id/login_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password_edit_text_layout" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login_button"
@@ -92,7 +107,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:layout_constraintVertical_chainStyle="packed" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -21,11 +21,13 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_login, container, false)
+            inflater, R.layout.fragment_login, container, false
+        )
 
 
         binding.loginButton.setOnClickListener {
-                viewModel.setUsernameError()
+            viewModel.validateUsername()
+            // todo add navigation
         }
         binding.registerButton.setOnClickListener {
             // todo add navigation
@@ -41,7 +43,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.usernameEditTextInput.doOnTextChanged { _, _, _, _ ->  viewModel.clearUsernameError() }
+        binding.usernameEditTextInput.doOnTextChanged { _, _, _, _ -> viewModel.clearUsernameError() }
 
         viewModel.usernameError.observe(viewLifecycleOwner) { errorText ->
             binding.usernameEditTextLayout.error = errorText

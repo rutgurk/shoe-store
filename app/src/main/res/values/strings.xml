@@ -5,4 +5,5 @@
     <string name="register_button">Register</string>
     <string name="password_label">Password</string>
     <string name="username_label">Username</string>
+    <string name="login_body_text">Enter a username and password\nIf you\'re an existing user choose login else select register</string>
 </resources>
