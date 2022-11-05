@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.login.LoginFragment">
 
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.udacity.shoestore.screens.login.LoginViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -14,7 +20,7 @@
         android:paddingEnd="@dimen/space_l">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_edit_text"
+            android:id="@+id/username_edit_text_layout"
             style="@style/FilledBoxRounded"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,22 +30,25 @@
             android:textAppearance="@style/TextAppearanceEditText"
             app:boxBackgroundColor="#FFFFFF"
             app:endIconMode="clear_text"
-            app:layout_constraintBottom_toTopOf="@id/password_edit_text"
+            app:layout_constraintBottom_toTopOf="@id/password_edit_text_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.8"
+            app:errorEnabled="true"
             app:layout_constraintVertical_chainStyle="packed">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_edit_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@={loginViewModel.username}"
                 android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_edit_text"
+            android:id="@+id/password_edit_text_layout"
             style="@style/FilledBoxRounded"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,9 +61,10 @@
             app:layout_constraintBottom_toTopOf="@id/login_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/username_edit_text">
+            app:layout_constraintTop_toBottomOf="@id/username_edit_text_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
