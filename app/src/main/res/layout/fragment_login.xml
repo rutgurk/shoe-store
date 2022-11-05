@@ -5,6 +5,8 @@
     tools:context=".screens.login.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E8EAF6"
@@ -62,7 +64,7 @@
             android:id="@+id/login_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_l"
+            android:layout_marginBottom="@dimen/space_m"
             android:text="@string/login_button"
             app:layout_constraintBottom_toTopOf="@id/register_button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +75,7 @@
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_xl"
+            android:layout_marginBottom="@dimen/space_l"
             android:text="@string/register_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
