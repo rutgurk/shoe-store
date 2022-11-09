@@ -11,103 +11,112 @@
             type="com.udacity.shoestore.screens.login.LoginViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E8EAF6"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:paddingStart="@dimen/space_l"
-        android:paddingEnd="@dimen/space_l">
+        android:fillViewport="true">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_edit_text_layout"
-            style="@style/FilledBoxRounded"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_m"
-            android:autofillHints="username"
-            android:hint="@string/username_label"
-            android:textAppearance="@style/TextAppearanceEditText"
-            app:boxBackgroundColor="#FFFFFF"
-            app:endIconMode="clear_text"
-            app:errorEnabled="true"
-            app:layout_constraintBottom_toTopOf="@id/password_edit_text_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8"
-            app:layout_constraintVertical_chainStyle="packed">
+            android:layout_height="match_parent"
+            android:background="#E8EAF6"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingStart="@dimen/space_l"
+            android:paddingEnd="@dimen/space_l">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username_edit_text_input"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_edit_text_layout"
+                style="@style/FilledBoxRounded"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:text="@{loginViewModel.username}" />
+                android:layout_marginTop="@dimen/space_xl"
+                android:layout_marginBottom="@dimen/space_m"
+                android:autofillHints="username"
+                android:hint="@string/username_label"
+                android:textAppearance="@style/TextAppearanceEditText"
+                app:boxBackgroundColor="#FFFFFF"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:errorText="@{loginViewModel.showError ? @string/username_error : null}"
+                app:layout_constraintBottom_toTopOf="@id/password_edit_text_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.8"
+                app:layout_constraintVertical_chainStyle="packed">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username_edit_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:onTextChanged="@{() -> loginViewModel.clearUsernameError()}"
+                    android:text="@={loginViewModel.username}" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_edit_text_layout"
-            style="@style/FilledBoxRounded"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_l"
-            android:autofillHints="Password"
-            android:hint="@string/password_label"
-            android:textAppearance="@style/TextAppearanceEditText"
-            app:boxBackgroundColor="#FFFFFF"
-            app:endIconMode="password_toggle"
-            app:layout_constraintBottom_toTopOf="@id/login_body_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/username_edit_text_layout">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_edit_text_input"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_edit_text_layout"
+                style="@style/FilledBoxRounded"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="@dimen/space_l"
+                android:autofillHints="Password"
+                android:hint="@string/password_label"
+                android:textAppearance="@style/TextAppearanceEditText"
+                app:boxBackgroundColor="#FFFFFF"
+                app:endIconMode="password_toggle"
+                app:layout_constraintBottom_toTopOf="@id/login_body_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username_edit_text_layout">
 
-        <TextView
-            android:id="@+id/login_body_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/space_l"
-            android:layout_marginEnd="@dimen/space_l"
-            android:layout_marginBottom="@dimen/space_l"
-            android:text="@string/login_body_text"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            app:layout_constraintBottom_toTopOf="@id/login_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password_edit_text_layout" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password_edit_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_m"
-            android:text="@string/login_button"
-            app:layout_constraintBottom_toTopOf="@id/register_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/login_body_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_l"
+                android:layout_marginEnd="@dimen/space_l"
+                android:layout_marginBottom="@dimen/space_l"
+                android:text="@string/login_body_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toTopOf="@id/login_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password_edit_text_layout" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/register_button"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_m"
-            android:text="@string/register_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintVertical_chainStyle="packed" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_m"
+                android:text="@string/login_button"
+                app:layout_constraintBottom_toTopOf="@id/register_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/register_button"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_m"
+                android:text="@string/register_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </layout>

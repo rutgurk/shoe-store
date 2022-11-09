@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doOnTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.udacity.shoestore.R
@@ -23,8 +22,6 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false
         )
-
-
         binding.loginButton.setOnClickListener {
             viewModel.validateUsername()
             // todo add navigation
@@ -32,7 +29,6 @@ class LoginFragment : Fragment() {
         binding.registerButton.setOnClickListener {
             // todo add navigation
         }
-
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginViewModel = viewModel
         binding.lifecycleOwner = this
@@ -40,13 +36,4 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.usernameEditTextInput.doOnTextChanged { _, _, _, _ -> viewModel.clearUsernameError() }
-
-        viewModel.usernameError.observe(viewLifecycleOwner) { errorText ->
-            binding.usernameEditTextLayout.error = errorText
-        }
-    }
 }

@@ -9,19 +9,19 @@ class LoginViewModel : ViewModel() {
 
     val username = MutableLiveData<String>()
 
-    private val _usernameError = MutableLiveData<String>()
-    val usernameError: LiveData<String>
-        get() = _usernameError
+    private val _showError = MutableLiveData<Boolean>(false)
+    val showError: LiveData<Boolean>
+        get() = _showError
 
-    val isValidUsername: Boolean = Utils.isValidEmail(username.value ?: "")
+    private val isValidUsername: Boolean = Utils.isValidEmail(username.value ?: "")
 
     fun clearUsernameError() {
-        _usernameError.value = ""
+        if (_showError.value == true) _showError.value = false
     }
 
     fun validateUsername() {
         if (!isValidUsername) {
-            _usernameError.value = "Please enter a valid e-mail address"
+            _showError.value = true
         }
     }
 }
