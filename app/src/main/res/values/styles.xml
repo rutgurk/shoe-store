@@ -35,4 +35,13 @@
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
+    <style name="TextAppearanceTitle">
+        <item name="android:textSize">@dimen/title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearanceBody">
+        <item name="android:textSize">@dimen/body</item>
+    </style>
+
 </resources>
