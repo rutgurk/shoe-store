@@ -13,4 +13,5 @@
     <string name="instructions_body_text">Here we go...</string>
     <string name="continue_button">Continue</string>
     <string name="shoe_overview_title">Shoes</string>
+    <string name="fab_description">Add a shoe</string>
 </resources>
