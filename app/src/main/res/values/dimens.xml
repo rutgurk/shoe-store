@@ -5,4 +5,5 @@
     <dimen name="space_m">8dp</dimen>
     <dimen name="heading_1">24sp</dimen>
     <dimen name="body">16sp</dimen>
+    <dimen name="title">24sp</dimen>
 </resources>

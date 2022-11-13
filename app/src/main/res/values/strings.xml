@@ -7,4 +7,9 @@
     <string name="username_label">Username</string>
     <string name="login_body_text">Enter a username and password\nIf you\'re an existing user choose login else select register</string>
     <string name="username_error">Please enter a valid e-mail address</string>
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_body_text">Step right in....</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions_body_text">Here we go...</string>
+    <string name="continue_button">Continue</string>
 </resources>
