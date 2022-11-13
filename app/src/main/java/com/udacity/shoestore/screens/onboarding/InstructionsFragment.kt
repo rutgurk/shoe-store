@@ -21,6 +21,9 @@ class InstructionsFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_instructions, container, false
         )
+        binding.instructionContinueButton.setOnClickListener {
+            // todo: nabigate to shoe list
+        }
         return binding.root
     }
 }
