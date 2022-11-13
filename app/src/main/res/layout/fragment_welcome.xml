@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.login.LoginFragment">
 
-    <data>
-
-        <variable
-            name="loginViewModel"
-            type="com.udacity.shoestore.screens.login.LoginViewModel" />
-    </data>
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +17,6 @@
             android:paddingTop="@dimen/space_l"
             android:paddingEnd="@dimen/space_l"
             tools:context=".screens.onboarding.WelcomeFragment">
-
 
             <TextView
                 android:id="@+id/welcome_title"
