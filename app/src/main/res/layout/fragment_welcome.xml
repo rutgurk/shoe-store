@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screens.login.LoginFragment">
+    tools:context=".screens.onboarding.WelcomeFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,8 +15,7 @@
             android:orientation="vertical"
             android:paddingStart="@dimen/space_l"
             android:paddingTop="@dimen/space_l"
-            android:paddingEnd="@dimen/space_l"
-            tools:context=".screens.onboarding.WelcomeFragment">
+            android:paddingEnd="@dimen/space_l">
 
             <TextView
                 android:id="@+id/welcome_title"
