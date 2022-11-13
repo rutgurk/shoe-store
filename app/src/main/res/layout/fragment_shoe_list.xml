@@ -9,25 +9,13 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="@dimen/space_l"
-            android:paddingTop="@dimen/space_l"
-            android:paddingEnd="@dimen/space_l">
+       <androidx.appcompat.widget.LinearLayoutCompat
+           android:id="@+id/shoe_list_container"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="@dimen/space_l"
+           android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Test"
-                android:textAppearance="@style/TextAppearanceTitle"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.3" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+       </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
 </layout>
