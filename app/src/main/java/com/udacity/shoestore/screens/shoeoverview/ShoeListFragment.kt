@@ -1,17 +1,21 @@
 package com.udacity.shoestore.screens.shoeoverview
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.models.Shoe
 
 
@@ -28,27 +32,36 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
-        sharedViewModel.addShoe(Shoe("Freak", 15.0, "Nike", "Mooie schoen"))
+//        sharedViewModel.addShoe(Shoe("Freak", 15.0, "Nike", "Mooie schoen"))
         sharedViewModel.shoeList.observe(viewLifecycleOwner) {
             populateShoeList(it)
         }
-        sharedViewModel.addShoe(Shoe("Freak 2", 15.0, "Nike", "Mooie schoen"))
+//        sharedViewModel.addShoe(Shoe("Freak 2", 15.0, "Nike", "Mooie schoen"))
+
+        binding.floatingActionButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
+        }
         return binding.root
     }
 
     private fun populateShoeList(shoeList: List<Shoe>) {
-        for (shoe in shoeList) {
-            binding.shoeListContainer.addView(getCard(shoe), getParams())
+        if (shoeList.isNotEmpty()) {
+            binding.shoeListContainer.removeAllViewsInLayout()
+            for (shoe in shoeList) {
+                binding.shoeListContainer.addView(getCard(shoe), getParams())
+            }
         }
     }
 
     private fun getCard(shoe: Shoe) : LinearLayout {
-        var container = LinearLayout(context)
-        val shoeItem = View.inflate(context, R.layout.item_shoe, container)
-        shoeItem.findViewById<TextView>(R.id.shoe_name).text = shoe.name
-        shoeItem.findViewById<TextView>(R.id.shoe_size).text = shoe.size.toString()
-        shoeItem.findViewById<TextView>(R.id.shoe_company).text = shoe.company
-        shoeItem.findViewById<TextView>(R.id.shoe_description).text = shoe.description
+        val container = LinearLayout(context)
+        val shoeBinding = DataBindingUtil.inflate<ItemShoeBinding>(
+            layoutInflater, R.layout.item_shoe, container, true
+        )
+        shoeBinding.shoeName.text = shoe.name
+        shoeBinding.shoeSize.text = shoe.size.toString()
+        shoeBinding.shoeCompany.text = shoe.company
+        shoeBinding.shoeDescription.text = shoe.description
         return container
     }
 
