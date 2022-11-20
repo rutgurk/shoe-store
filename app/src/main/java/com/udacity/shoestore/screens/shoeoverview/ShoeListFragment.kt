@@ -1,19 +1,15 @@
 package com.udacity.shoestore.screens.shoeoverview
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.ListView
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.models.Shoe
@@ -32,11 +28,9 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
-//        sharedViewModel.addShoe(Shoe("Freak", 15.0, "Nike", "Mooie schoen"))
         sharedViewModel.shoeList.observe(viewLifecycleOwner) {
             populateShoeList(it)
         }
-//        sharedViewModel.addShoe(Shoe("Freak 2", 15.0, "Nike", "Mooie schoen"))
 
         binding.floatingActionButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)

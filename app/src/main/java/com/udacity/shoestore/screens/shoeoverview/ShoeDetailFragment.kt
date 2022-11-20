@@ -9,9 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.models.Shoe
 
 class ShoeDetailFragment: Fragment() {
@@ -27,6 +25,7 @@ class ShoeDetailFragment: Fragment() {
             inflater, R.layout.fragment_shoe_detail, container, false
         )
         binding.saveButton.setOnClickListener {
+            // Todo: replace this add shoe method
             sharedViewModel.addShoe(Shoe("Freak", 15.0, "Nike", "Mooie schoen"))
             it.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }

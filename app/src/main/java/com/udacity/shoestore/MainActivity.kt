@@ -12,6 +12,15 @@ import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    // Todo: Add clarification of choice to layout files
+    // Todo: Add (back)navigation stack behaviour
+    // Todo: Add animations to navigation
+    // Todo: DetailFragment layout: incorporate fields in same ViewModel?
+    // Todo: reset edittext values after submit? 
+    // Todo: DetailFragment Styling
+    // Todo: Logout option from Shoe List
+
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
