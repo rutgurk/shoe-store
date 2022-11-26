@@ -16,8 +16,7 @@ class MainActivity : AppCompatActivity() {
     // Todo: Add (back)navigation stack behaviour
     // Todo: Add animations to navigation
     // Todo: DetailFragment layout: incorporate fields in same ViewModel?
-    // Todo: reset edittext values after submit? 
-    // Todo: DetailFragment Styling
+    // Todo: reset edittext values after submit?
     // Todo: Logout option from Shoe List
 
 
