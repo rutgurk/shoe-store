@@ -24,9 +24,10 @@ class ShoeDetailFragment: Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_detail, container, false
         )
+        binding.shoeViewModel = sharedViewModel
         binding.saveButton.setOnClickListener {
             // Todo: replace this add shoe method
-            sharedViewModel.addShoe(Shoe("Freak", 15.0, "Nike", "Mooie schoen"))
+            sharedViewModel.createShoeFromInput()
             it.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
         binding.cancelButton.setOnClickListener {

@@ -60,10 +60,9 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun getParams(): ViewGroup.MarginLayoutParams {
-        var params =  ViewGroup.MarginLayoutParams(
+        return ViewGroup.MarginLayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-        return params
     }
 }
