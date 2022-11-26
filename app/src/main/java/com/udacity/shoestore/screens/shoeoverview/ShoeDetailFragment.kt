@@ -26,7 +26,6 @@ class ShoeDetailFragment: Fragment() {
         )
         binding.shoeViewModel = sharedViewModel
         binding.saveButton.setOnClickListener {
-            // Todo: replace this add shoe method
             sharedViewModel.createShoeFromInput()
             it.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
