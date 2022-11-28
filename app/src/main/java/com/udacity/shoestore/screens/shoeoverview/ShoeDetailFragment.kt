@@ -1,12 +1,13 @@
 package com.udacity.shoestore.screens.shoeoverview
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
@@ -32,6 +33,7 @@ class ShoeDetailFragment: Fragment() {
         binding.cancelButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 
