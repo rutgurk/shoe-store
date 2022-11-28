@@ -74,7 +74,6 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun addMenuToToolbar() {
-
         val menuHost = requireActivity() as MenuHost
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -87,7 +86,7 @@ class ShoeListFragment : Fragment() {
                         .navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
                     true
                 } else {
-                    false // Todo: back nav not working, fix it :)
+                    false
                 }
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
