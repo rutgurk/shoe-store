@@ -23,7 +23,7 @@ class InstructionsFragment : Fragment() {
             inflater, R.layout.fragment_instructions, container, false
         )
         binding.instructionContinueButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_instructionsFragment_to_shoeListFragment)
+            InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
 
         }
         return binding.root

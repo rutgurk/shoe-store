@@ -39,7 +39,6 @@ class ShoeViewModel : ViewModel() {
         shoeSize.value = ""
         shoeCompany.value = ""
         shoeDescription.value = ""
-
     }
 
     private fun addShoe(newShoe: Shoe) {

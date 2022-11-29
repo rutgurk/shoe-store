@@ -36,11 +36,14 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/shoe_name_field"
                 style="?attr/textInputFilledStyle"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_l"
                 android:hint="@string/shoe_name_label"
                 app:endIconMode="clear_text"
+                app:layout_constraintEnd_toStartOf="@id/shoe_size_field"
+                android:layout_marginRight="@dimen/space_m"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detail_title"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintVertical_chainStyle="packed"
@@ -57,17 +60,20 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/shoe_size_field"
                 style="?attr/textInputFilledStyle"
-                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/shoe_name_field"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_l"
+                android:ems="2"
+                android:minWidth="88dp"
                 android:hint="@string/shoe_size_label"
-                app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_name_field">
+                app:layout_constraintTop_toBottomOf="@id/detail_title">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@={shoeViewModel.shoeSize}" />
 

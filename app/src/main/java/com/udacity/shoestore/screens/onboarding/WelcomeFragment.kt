@@ -23,7 +23,7 @@ class WelcomeFragment : Fragment() {
             inflater, R.layout.fragment_welcome, container, false
         )
         binding.welcomeContinueButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_welcomeFragment_to_instructionsFragment)
+            WelcomeFragmentDirections.actionWelcomeFragmentToInstructionsFragment()
         }
         return binding.root
     }

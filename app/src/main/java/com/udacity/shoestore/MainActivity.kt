@@ -16,6 +16,8 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     // Todo: Add clarification of choice to layout files
+    // Todo: Content description?
+    // Todo: use safeArgs for nav?
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration

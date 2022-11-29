@@ -13,7 +13,7 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
 
-class ShoeDetailFragment: Fragment() {
+class ShoeDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeDetailBinding
     private val sharedViewModel: ShoeViewModel by activityViewModels()
@@ -28,10 +28,10 @@ class ShoeDetailFragment: Fragment() {
         binding.shoeViewModel = sharedViewModel
         binding.saveButton.setOnClickListener {
             sharedViewModel.createShoeFromInput()
-            it.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+            ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment()
         }
         binding.cancelButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+            ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment()
         }
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root

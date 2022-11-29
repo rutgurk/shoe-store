@@ -19,7 +19,7 @@
     <string name="cancel_button">Cancel</string>
     <string name="shoe_list_empty_state">Tap \'Plus\' to get started and add some shoes!</string>
     <string name="shoe_name_label">Shoe name</string>
-    <string name="shoe_size_label">Shoe size</string>
+    <string name="shoe_size_label">Size</string>
     <string name="shoe_company_label">Shoe Company</string>
     <string name="shoe_description_label">Shoe description</string>
     <string name="logout_button">Logout</string>

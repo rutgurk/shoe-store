@@ -38,7 +38,7 @@ class ShoeListFragment : Fragment() {
         }
 
         binding.floatingActionButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
+            ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()
         }
         binding.lifecycleOwner = viewLifecycleOwner
         addMenuToToolbar()

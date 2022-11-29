@@ -24,10 +24,10 @@ class LoginFragment : Fragment() {
             inflater, R.layout.fragment_login, container, false
         )
         binding.loginButton.setOnClickListener {
-            if (viewModel.isValidUsername()) it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+            if (viewModel.isValidUsername()) LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
         }
         binding.registerButton.setOnClickListener {
-            if (viewModel.isValidUsername()) it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+            if (viewModel.isValidUsername()) LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
         }
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginViewModel = viewModel
