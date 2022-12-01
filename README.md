@@ -36,6 +36,9 @@ https://developer.android.com/topic/libraries/architecture/viewmodel
 #### Databinding: Two-way and binding adapter
 https://developer.android.com/topic/libraries/data-binding/two-way
 
+#### Shared ViewModel
+https://developer.android.com/codelabs/basic-android-kotlin-training-shared-viewmodel
+
 ### Assignment Instructions
 
 1. Open the starter project in Android Studio
