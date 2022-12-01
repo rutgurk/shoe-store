@@ -21,7 +21,14 @@ class ShoeViewModel : ViewModel() {
     private val list = mutableListOf<Shoe>()
 
     fun createShoeFromInput() {
-        addShoe(Shoe(formatValue(shoeName.value.toString()),formatShoeSize(shoeSize.value), formatValue(shoeCompany.value.toString()), formatValue(shoeDescription.value.toString())))
+        addShoe(
+            Shoe(
+                formatValue(shoeName.value.toString()),
+                formatShoeSize(shoeSize.value),
+                formatValue(shoeCompany.value.toString()),
+                formatValue(shoeDescription.value.toString())
+            )
+        )
         clearInputValues()
     }
 

@@ -11,13 +11,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.models.Shoe
-import com.udacity.shoestore.screens.login.LoginFragmentDirections
 
 
 class ShoeListFragment : Fragment() {
@@ -27,8 +24,7 @@ class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
@@ -68,8 +64,7 @@ class ShoeListFragment : Fragment() {
 
     private fun getParams(): ViewGroup.MarginLayoutParams {
         return ViewGroup.MarginLayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
         )
     }
 
