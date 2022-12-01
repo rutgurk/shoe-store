@@ -4,22 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.shoeoverview.ShoeListFragment">
 
+    <!--Coordinator Layout used because it manages interactions and the overlap of FAB button and underlying scroll view -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--Nested Scroll View used to support the list of shoes to grow longer than the viewport -->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true">
 
+            <!--Linear Layout used because it is required in step 11 of the instructions -->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/shoe_list_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingTop="@dimen/space_m"
                 android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_m"
                 android:paddingEnd="@dimen/space_m"
                 android:paddingBottom="@dimen/space_xxl">
 

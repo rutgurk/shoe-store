@@ -1,5 +1,10 @@
 # The Shoe Store
 
+This is an assignment that's part of the Udacity Android Kotlin Developer course.
+
+Source used for grading: https://review.udacity.com/#!/rubrics/2849/view 
+
+## Assignment 
 This project will consist of five screens. You don't have to create a shoe store, you can use any other item as long as you create the following screens. You will be creating:
 
 1. Login screen: Email and password fields and labels plus create and login buttons
@@ -8,13 +13,30 @@ This project will consist of five screens. You don't have to create a shoe store
 4. Shoe Listing screen
 5. Shoe Detail screen for adding a new shoe
 
-## Getting Started
+### Sources used
 
-Open the starter project in the latest stable version of Android Studio.
+Additional sources used outside of course provided material and links
 
-Open the starter project in Android Studio
+#### Design
+https://m3.material.io/
+https://github.com/material-components/material-components-android/blob/master/docs/components/TextField.md
+https://github.com/material-components/material-components-android/blob/master/docs/components/TopAppBar.md
 
-##Steps
+#### Toolbar and MenuHost
+https://developer.android.com/develop/ui/views/components/appbar
+https://developer.android.com/jetpack/androidx/releases/activity#1.4.0-alpha01
+
+#### Navigation
+https://medium.com/androiddevelopers/navigationui-d21fd4f5c318
+https://developer.android.com/guide/navigation/navigation-ui
+
+#### Lifecycle
+https://developer.android.com/topic/libraries/architecture/viewmodel
+
+#### Databinding: Two-way and binding adapter
+https://developer.android.com/topic/libraries/data-binding/two-way
+
+### Assignment Instructions
 
 1. Open the starter project in Android Studio
 

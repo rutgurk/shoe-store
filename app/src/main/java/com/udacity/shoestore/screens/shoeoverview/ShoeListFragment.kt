@@ -1,14 +1,16 @@
 package com.udacity.shoestore.screens.shoeoverview
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.LinearLayout
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
@@ -22,8 +24,7 @@ class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
@@ -33,8 +34,10 @@ class ShoeListFragment : Fragment() {
         }
 
         binding.floatingActionButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
+        binding.lifecycleOwner = viewLifecycleOwner
+        addMenuToToolbar()
         return binding.root
     }
 
@@ -47,7 +50,7 @@ class ShoeListFragment : Fragment() {
         }
     }
 
-    private fun getCard(shoe: Shoe) : LinearLayout {
+    private fun getCard(shoe: Shoe): LinearLayout {
         val container = LinearLayout(context)
         val shoeBinding = DataBindingUtil.inflate<ItemShoeBinding>(
             layoutInflater, R.layout.item_shoe, container, true
@@ -61,8 +64,26 @@ class ShoeListFragment : Fragment() {
 
     private fun getParams(): ViewGroup.MarginLayoutParams {
         return ViewGroup.MarginLayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
         )
+    }
+
+    private fun addMenuToToolbar() {
+        val menuHost = requireActivity() as MenuHost
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.overflow_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return if (menuItem.itemId == R.id.loginFragment) {
+                    requireView().findNavController()
+                        .navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+                    true
+                } else {
+                    false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 }

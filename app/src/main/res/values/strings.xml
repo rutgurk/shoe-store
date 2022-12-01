@@ -10,7 +10,7 @@
     <string name="welcome_title">Welcome</string>
     <string name="welcome_body_text">Step right in....</string>
     <string name="instructions_title">Instructions</string>
-    <string name="instructions_body_text">Here we go...</string>
+    <string name="instructions_body_text">You'll be able to add your favorite shoes to a list and keep track of what you've got!\nOn the next screen, just tap the 'plus' button to get started!</string>
     <string name="continue_button">Continue</string>
     <string name="shoe_overview_title">Shoes</string>
     <string name="fab_description">Add a shoe</string>
@@ -19,7 +19,8 @@
     <string name="cancel_button">Cancel</string>
     <string name="shoe_list_empty_state">Tap \'Plus\' to get started and add some shoes!</string>
     <string name="shoe_name_label">Shoe name</string>
-    <string name="shoe_size_label">Shoe size</string>
+    <string name="shoe_size_label">Size</string>
     <string name="shoe_company_label">Shoe Company</string>
     <string name="shoe_description_label">Shoe description</string>
+    <string name="logout_button">Logout</string>
 </resources>

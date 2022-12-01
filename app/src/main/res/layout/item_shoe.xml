@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Material Card View used because it provides styling out of the box -->
     <com.google.android.material.card.MaterialCardView
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_m">
 
+        <!--Constraint Layout used to allow for more precise positioning of views without nesting-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/space_l">
 
             <TextView
-                style="@style/TextAppearance.Material3.TitleSmall"
                 android:id="@+id/shoe_name"
+                style="@style/TextAppearance.Material3.TitleSmall"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_m"
+                app:layout_constraintEnd_toStartOf="@id/shoe_size"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/shoe_size"
-                android:layout_marginRight="@dimen/space_m"
                 tools:text="Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini." />
 
             <TextView
@@ -39,21 +41,21 @@
                 android:id="@+id/shoe_company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_m"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/shoe_name"
-                android:layout_marginTop="@dimen/space_m"
                 tools:text="Nike" />
 
             <TextView
                 android:id="@+id/shoe_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_m"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="@dimen/space_m"
                 app:layout_constraintTop_toBottomOf="@id/shoe_company"
                 tools:text="Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic." />
         </androidx.constraintlayout.widget.ConstraintLayout>

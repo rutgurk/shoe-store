@@ -11,11 +11,13 @@
             type="com.udacity.shoestore.screens.login.LoginViewModel" />
     </data>
 
+    <!--Nested Scroll View used to support small screens and landscape usage -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+        <!--Constraint Layout used to allow for more precise positioning and spread of views without nesting-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

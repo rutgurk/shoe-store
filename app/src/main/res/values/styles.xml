@@ -14,7 +14,6 @@
     </style>
 
     <style name="ToolBarShoeStore" parent="Widget.Material3.Toolbar">
-        <!-- color used by navigation icon and overflow icon -->
         <item name="android:background">@color/colorPrimary</item>
         <item name="titleTextColor">@color/white</item>
     </style>
